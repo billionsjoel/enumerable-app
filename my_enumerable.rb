@@ -28,12 +28,12 @@ module MyEnumerable
   end
 
   def sort
-    sortedArr = []
-    newArr = @list.dup
-    (1..newArr.count).each do |e|
-      sortedArr.push(newArr.min)
-      newArr.delete(newArr.min)
+    sorted_arr = []
+    new_arr = @list.dup
+    (1..new_arr.count).each do |_num|
+      sorted_arr.push(new_arr.min)
+      new_arr.delete(new_arr.min)
     end
-    sortedArr
+    sorted_arr
   end
 end
