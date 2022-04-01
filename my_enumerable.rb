@@ -1,39 +1,39 @@
 module MyEnumerable
   def all?
-    each { |n| return false unless yield(n) }
+    each { |num| return false unless yield(num) }
     true
   end
 
   def any?
-    each { |n| return true if yield(n) }
+    each { |num| return true if yield(num) }
     false
   end
 
   def filter
     arr = []
-    each { |n| arr.push(n) if yield(n) }
+    each { |num| arr.push(num) if yield(num) }
     arr
   end
 
   def max
     max = 0
-    each { |n| max = n if n > max }
+    each { |num| max = num if num > max }
     max
   end
 
   def min
     min = +1.0 / 0.0
-    each { |n| min = n if n < min }
+    each { |num| min = num if num < min }
     min
   end
 
   def sort
-    sorted = []
-    newlist = @list.dup
-    (1..newlist.count).each do |_x|
-      sorted.push(newlist.min)
-      newlist.delete(newlist.min)
+    sortedArr = []
+    newArr = @list.dup
+    (1..newArr.count).each do |e|
+      sortedArr.push(newArr.min)
+      newArr.delete(newArr.min)
     end
-    sorted
+    sortedArr
   end
 end
